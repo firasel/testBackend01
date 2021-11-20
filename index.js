@@ -13,7 +13,7 @@ const Login = require("./controller/User/Login");
 const Register = require("./controller/User/Register");
 const Update = require("./controller/User/Update");
 const LoginGuard = require("./middleware/LoginGuard");
-// const userHandler = require("./routeHandlers/userHandler.js");
+const userHandler = require("./routeHandler/userHandler.js");
 // const taskHandler = require("./routeHandlers/taskHandler.js");
 
 const port = process.env.PORT || 3000;
@@ -28,7 +28,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // // Routes
-// app.use("/user", userHandler);
+app.use("/user", userHandler);
 
 // // Routes
 // app.use("/task", taskHandler);
