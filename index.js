@@ -8,7 +8,11 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-const Test = require('./controller/User/Test');
+const Test = require("./controller/User/Test");
+const Login = require("./controller/User/Login");
+const Register = require("./controller/User/Register");
+const Update = require("./controller/User/Update");
+const LoginGuard = require("./middleware/LoginGuard");
 // const userHandler = require("./routeHandlers/userHandler.js");
 // const taskHandler = require("./routeHandlers/taskHandler.js");
 
@@ -29,7 +33,7 @@ mongoose
 // // Routes
 // app.use("/task", taskHandler);
 
-app.get("/test",Test);
+app.use('/test',Test);
 
 app.get("/", (req, res) => {
   res.send("Api is worikng");
