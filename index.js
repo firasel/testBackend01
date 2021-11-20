@@ -12,7 +12,7 @@ const userHandler = require("./routeHandlers/userHandler");
 const taskHandler = require("./routeHandlers/taskHandler");
 const SendResponse = require("./controller/SendResponse/SendResponse");
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.lwdhb.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 mongoose
@@ -23,11 +23,11 @@ mongoose
   .then(() => console.log("connection successful"))
   .catch((err) => console.log(err));
 
-// Routes
-app.use("/user", userHandler);
+// // Routes
+// app.use("/user", userHandler);
 
-// Routes
-app.use("/task", taskHandler);
+// // Routes
+// app.use("/task", taskHandler);
 
 app.get("/", (req, res) => {
   res.send("Api is worikng");
