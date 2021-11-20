@@ -3,7 +3,7 @@ const userSchema = require("../../schemas/userSchema");
 const Users = new mongoose.model("users", userSchema);
 const SendResponse = require("../SendResponse/SendResponse");
 
-const Get = async (req, res) => {
+const GetTask = async (req, res) => {
   try {
     // Check user is available
     if (res.locals.email) {
@@ -36,4 +36,4 @@ const Get = async (req, res) => {
   }
 };
 
-module.exports = Get;
+module.exports = GetTask;

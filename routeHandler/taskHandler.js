@@ -1,15 +1,15 @@
 const express = require("express");
-const Add = require("../controller/Task/add");
-const Get = require("../controller/Task/Get");
-const Update = require("../controller/Task/Update");
-const router = express.Router();
+const AddTask = require("../controller/Task/AddTask");
+const GetTask = require("../controller/Task/GetTask");
+const UpdateTask = require("../controller/Task/UpdateTask");
 const LoginGuard = require("../middleware/LoginGuard");
+const router = express.Router();
 
 // Add a task
-router.post("/add", LoginGuard, Add);
+router.post("/add", LoginGuard, AddTask);
 // Update task status
-router.post("/update", LoginGuard, Update);
+router.post("/update", LoginGuard, UpdateTask);
 // Get task
-router.get("/get", LoginGuard, Get);
+router.get("/get", LoginGuard, GetTask);
 
 module.exports = router;

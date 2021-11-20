@@ -3,7 +3,7 @@ const userSchema = require("../../schemas/userSchema");
 const Users = new mongoose.model("users", userSchema);
 const SendResponse = require("../SendResponse/SendResponse");
 
-const Add = async (req, res) => {
+const AddTask = async (req, res) => {
   try {
     const { title = undefined, status } = req.body;
     // Check user is available and right data provide
@@ -36,4 +36,4 @@ const Add = async (req, res) => {
   }
 };
 
-module.exports = Add;
+module.exports = AddTask;
