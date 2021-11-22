@@ -8,8 +8,7 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-const Test = require("./controller/User/Test");
-// const userHandler = require("./routeHandler/userHandler.js");
+const userHandler = require("./routeHandler/userHandler.js");
 const taskHandler = require("./routeHandler/taskHandler.js");
 
 const port = process.env.PORT || 3000;
